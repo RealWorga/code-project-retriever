@@ -1,7 +1,7 @@
 # Project Code Retriever
 
 This is a simple implementation of a Python CLI program that can be used by developers to create informationally-dense (token limited) context retrieved from your project repository for inference with a code-instruct-tuned LLMs.
-The goal here is to get the context copied over to your clipboard, and get information about the token count.
+The preliminary goal here is to get the context copied over to your clipboard, and get information about the token count.
 
 ## Usage
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin sem sit amet justo tincidunt, cursus mattis lorem malesuada. Sed ut leo quis dui mattis egestas ac quis dolor. Nam condimentum lorem id turpis dapibus, at posuere dolor tempor. Nulla ac sollicitudin massa, a facilisis sem. Vestibulum nisi lectus, scelerisque.
