@@ -1,0 +1,31 @@
+name: Python CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pylint autopep8
+    - name: Lint with Pylint
+      run: |
+        pylint $(find app -path app/output -prune -o -type f -name "*.py" -print)
+    - name: Format code with autopep8
+      run: |
+        autopep8 --in-place --aggressive --aggressive $(find app -path app/output -prune -o -type f -name "*.py" -print)
+    - name: Check if files were changed by autopep8
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "Code style issues found. Please run autopep8 locally and commit the changes."
+          git status --porcelain
+          exit 1
+        fi
