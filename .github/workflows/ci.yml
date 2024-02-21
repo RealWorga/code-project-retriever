@@ -17,9 +17,13 @@ jobs:
         pip install -r requirements.txt
         pip install pylint autopep8
     - name: Lint with Pylint
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
       run: |
         pylint $(find src -type f -name "*.py" -print)
     - name: Format code with autopep8
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
       run: |
         autopep8 --in-place --aggressive --aggressive $(find src -type f -name "*.py" -print)
     - name: Check if files were changed by autopep8
