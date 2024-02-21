@@ -18,10 +18,10 @@ jobs:
         pip install pylint autopep8
     - name: Lint with Pylint
       run: |
-        pylint $(find app -path app/output -prune -o -type f -name "*.py" -print)
+        pylint $(find src -type f -name "*.py" -print)
     - name: Format code with autopep8
       run: |
-        autopep8 --in-place --aggressive --aggressive $(find app -path app/output -prune -o -type f -name "*.py" -print)
+        autopep8 --in-place --aggressive --aggressive $(find src -type f -name "*.py" -print)
     - name: Check if files were changed by autopep8
       run: |
         if [[ -n $(git status --porcelain) ]]; then
