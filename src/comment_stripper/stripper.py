@@ -101,7 +101,7 @@ def handle_cli_args(args):
                           remove_newlines=args.remove_newlines, verbose=verbose)
     elif os.path.isfile(args.path):
         cleaned_source = process_file(
-            args.path, remove_newlines=args.remove_newlines, verbose=verbose)
+            args.path, remove_newlines=args.remove_newlines)
         target_file_path = args.path.rsplit('.', 1)[0] + '_stripped.py'
         with open(target_file_path, 'w', encoding='utf-8') as new_file:
             new_file.write(cleaned_source)
