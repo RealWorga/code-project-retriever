@@ -10,6 +10,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin 
 This program assumes that you have written modular code. Adhering to simple coding principles makes your code more readable for both humans and LLMs without necessitating superflous docstrings or code comments.
 
 ## Limitations and Contributions
-Currently this is just a quick implementation, I will maybe incrementally enhance its robustness and functionalities, if I have time.
+Currently this is just a quick implementation for Python based project. Given time, I will maybe incrementally enhance its robustness and functionalities to for instance not only be limited to full Python based projects.
 
 It's an open project, so contributions that come as pull requests or adding issues to this repo is warmly welcomed.
