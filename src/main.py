@@ -1,5 +1,6 @@
 import argparse
 
+# pylint: disable=import-error
 from comment_stripper import stripper
 
 
