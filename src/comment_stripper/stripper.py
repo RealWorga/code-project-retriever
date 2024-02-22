@@ -11,9 +11,9 @@ def strip_comments_and_docstrings(source):
     for node in ast.walk(parsed):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Module)):
             node.body = [n for n in node.body if not isinstance(
-                n, ast.Expr) or not isinstance(n.value, ast.Str)]
-        elif isinstance(node, ast.Assign) and isinstance(node.value, ast.Str):
-            node.value = ast.Str(s='')
+                n, ast.Expr) or not isinstance(n.value, ast.Constant)]
+        elif isinstance(node, ast.Assign) and isinstance(node.value, ast.Constant):
+            node.value = ast.Constant(s='')
     return parsed
 
 
